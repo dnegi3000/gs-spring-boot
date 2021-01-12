@@ -16,7 +16,7 @@ stages:
     displayName: Build
     pool:
       vmImage: 'ubuntu-latest'
-  
+
     steps:
       - task: Maven@3
         inputs:
@@ -28,6 +28,8 @@ stages:
           publishJUnitResults: true
           testResultsFiles: '**/surefire-reports/TEST-*.xml'
           goals: 'package'
+        
+         
 - stage: deploy
   displayName: Deploy Name
   jobs:
